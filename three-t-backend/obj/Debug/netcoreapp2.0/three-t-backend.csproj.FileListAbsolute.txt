@@ -1,0 +1,10 @@
+/Users/agile/Developer/ROAM/three-t-backend/bin/Debug/netcoreapp2.0/three-t-backend.deps.json
+/Users/agile/Developer/ROAM/three-t-backend/bin/Debug/netcoreapp2.0/three-t-backend.runtimeconfig.json
+/Users/agile/Developer/ROAM/three-t-backend/bin/Debug/netcoreapp2.0/three-t-backend.runtimeconfig.dev.json
+/Users/agile/Developer/ROAM/three-t-backend/bin/Debug/netcoreapp2.0/three-t-backend.dll
+/Users/agile/Developer/ROAM/three-t-backend/bin/Debug/netcoreapp2.0/three-t-backend.pdb
+/Users/agile/Developer/ROAM/three-t-backend/obj/Debug/netcoreapp2.0/three-t-backend.csproj.CoreCompileInputs.cache
+/Users/agile/Developer/ROAM/three-t-backend/obj/Debug/netcoreapp2.0/three-t-backend.AssemblyInfoInputs.cache
+/Users/agile/Developer/ROAM/three-t-backend/obj/Debug/netcoreapp2.0/three-t-backend.AssemblyInfo.cs
+/Users/agile/Developer/ROAM/three-t-backend/obj/Debug/netcoreapp2.0/three-t-backend.dll
+/Users/agile/Developer/ROAM/three-t-backend/obj/Debug/netcoreapp2.0/three-t-backend.pdb
