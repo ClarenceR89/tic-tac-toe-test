@@ -1,0 +1,42 @@
+:host {
+  display: flex;
+  flex-flow: row wrap;
+  overflow: auto;
+  height: 100%;
+  position: static;
+
+  .sidebar-section {
+    position: absolute;
+    left: 0;
+    width: 60px;
+    background-color: #333;
+    color: #EEE;
+
+    img {
+      height: auto;
+      width: 40px;
+    }
+
+    .vertical-label {
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+        font-size: 24px;
+    }
+  }
+
+  .main-section {
+    margin-left: 60px;
+
+    .body {
+      background-color: #555;
+      border-bottom: 2px solid #E0E0E0;
+      color: #fff;
+    }
+
+    .footer {
+      height: 200px;
+      color: #E0E0E0;
+      background-color: #E00000;
+    }
+  }
+}
