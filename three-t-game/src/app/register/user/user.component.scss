@@ -1,0 +1,13 @@
+:host {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    form {
+        border: 2px solid #E0E0E0;
+        border-radius: 8px;
+        padding: 1rem;
+    }
+}

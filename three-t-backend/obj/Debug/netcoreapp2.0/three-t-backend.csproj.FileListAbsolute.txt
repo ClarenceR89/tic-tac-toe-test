@@ -8,3 +8,13 @@
 /Users/agile/Developer/ROAM/three-t-backend/obj/Debug/netcoreapp2.0/three-t-backend.AssemblyInfo.cs
 /Users/agile/Developer/ROAM/three-t-backend/obj/Debug/netcoreapp2.0/three-t-backend.dll
 /Users/agile/Developer/ROAM/three-t-backend/obj/Debug/netcoreapp2.0/three-t-backend.pdb
+d:\Projects\tic-tac-toe-test\three-t-backend\bin\Debug\netcoreapp2.0\three-t-backend.deps.json
+d:\Projects\tic-tac-toe-test\three-t-backend\bin\Debug\netcoreapp2.0\three-t-backend.runtimeconfig.json
+d:\Projects\tic-tac-toe-test\three-t-backend\bin\Debug\netcoreapp2.0\three-t-backend.runtimeconfig.dev.json
+d:\Projects\tic-tac-toe-test\three-t-backend\bin\Debug\netcoreapp2.0\three-t-backend.dll
+d:\Projects\tic-tac-toe-test\three-t-backend\bin\Debug\netcoreapp2.0\three-t-backend.pdb
+d:\Projects\tic-tac-toe-test\three-t-backend\obj\Debug\netcoreapp2.0\three-t-backend.csproj.CoreCompileInputs.cache
+d:\Projects\tic-tac-toe-test\three-t-backend\obj\Debug\netcoreapp2.0\three-t-backend.AssemblyInfoInputs.cache
+d:\Projects\tic-tac-toe-test\three-t-backend\obj\Debug\netcoreapp2.0\three-t-backend.AssemblyInfo.cs
+d:\Projects\tic-tac-toe-test\three-t-backend\obj\Debug\netcoreapp2.0\three-t-backend.dll
+d:\Projects\tic-tac-toe-test\three-t-backend\obj\Debug\netcoreapp2.0\three-t-backend.pdb

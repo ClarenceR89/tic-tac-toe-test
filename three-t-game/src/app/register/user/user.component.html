@@ -1,0 +1,16 @@
+<form id="newUserForm" [formGroup]="newUserForm" novalidate (ngSubmit)="acceptUser()">
+  <div class="form-group">
+    <label for="nameControl" class="center-block">
+      Name:
+      <input class="form-control" name="nameControl" type="text" formControlName="name">
+    </label>
+  </div>
+  <div class="form-group">
+    <label for="aliasControl" class="center-block">
+      Alias:
+      <input class="form-control"  name="aliasControl" type="text" formControlName="alias">
+    </label>
+  </div>
+  <input type="button" (click)="createForm()" value="Cancel" class="btn btn-secondary">
+  <input type="submit" [disabled]="newUserForm.invalid || newUserForm.pristine" class="btn btn-primary">  
+</form>

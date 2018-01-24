@@ -14,6 +14,14 @@ namespace three_t_backend.Controllers
         public UserController(UserContext context)
         {
             _context = context;
+
+            if (_context.UserItems.Count() == 0) {
+                _context.UserItems.Add(new User() {
+                    Alias= "AI",
+                    Name= "Computer"
+                });
+                _context.SaveChanges();
+            }
         }
 
         [HttpGet]
