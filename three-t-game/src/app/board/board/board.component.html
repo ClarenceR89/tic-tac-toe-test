@@ -1,3 +1,5 @@
-<p>
-  board works!
-</p>
+<div class="board col-12 px-0">
+  <div [class.disabled]="checkTile(i) || finished" class="tile col-4 px-0 d-flex justify-content-center align-items-center" *ngFor="let tile of tiles; let i = index" (click)="makeMove(i)">
+    <div class="marker"  [ngClass]="{'naught': getNaught(i), 'cross': getCross(i)}"></div>
+  </div>
+</div>

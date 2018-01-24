@@ -1,3 +1,16 @@
-<p>
-  game works!
-</p>
+<div *ngIf="!game; then newGameTemplate; else boardTemplate">
+</div>
+
+<ng-template #newGameTemplate>
+  <p>
+    Click to start a new Game!
+  </p>
+  <div class="w-100"></div>
+  <button class="btn btn-primary" (click)="startAIGame()">.Vs AI</button>
+  <button class="btn btn-primary" [disabled]="true">.Vs Player</button>
+</ng-template>
+
+<ng-template #boardTemplate>
+  <app-board [game]="game" [finished]="finished" class="game col-6 px-0"></app-board>
+  <label class="finished" [hidden]="!finished">{{winText}}</label>
+</ng-template>

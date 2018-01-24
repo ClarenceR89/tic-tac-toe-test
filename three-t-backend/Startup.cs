@@ -12,6 +12,7 @@ using Microsoft.Extensions.Options;
 using three_t_backend.Models;
 using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.AspNetCore.Cors;
+using three_t_backend.SignalRHubs;
 
 namespace three_t_backend
 {
@@ -24,6 +25,7 @@ namespace three_t_backend
             services.AddDbContext<MoveContext>(opt => opt.UseInMemoryDatabase("MoveList"));
             services.AddDbContext<GameContext>(opt => opt.UseInMemoryDatabase("GameList"));
             services.AddCors();
+            services.AddSignalR();
             services.AddMvc();
 
             services.AddSwaggerGen(c =>
@@ -54,6 +56,10 @@ namespace three_t_backend
                 .AllowAnyHeader()
                 .AllowAnyMethod()
             );
+
+            app.UseSignalR(routes => {
+                routes.MapHub<MoveHub>("move");
+            });
 
             app.UseMvc();
         }

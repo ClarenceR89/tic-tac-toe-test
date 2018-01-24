@@ -1,0 +1,49 @@
+.board {
+    display: flex;
+    flex-flow: row wrap;
+    border: 1px solid #e0e0e0;
+       
+    .tile {
+        height: 140px;
+        width: 140px;
+        background-color: brown;
+        border: 1px solid #e0e0e0;
+
+        .marker {
+            transition:all 1s ease;
+
+            &.naught {
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                background-color: transparent;
+                border: 5px solid #00247D;
+            }
+
+            &.cross {
+                width:90px;
+                height:90px;
+                position:relative;
+                margin: 0;
+
+                &:before,&:after{
+                    content: '';
+                    position: absolute;
+                    width: 100px;
+                    height: 5px;
+                    background-color: white;
+                    top: 43px;
+                    left: -4px;
+                }
+
+                &:before{
+                    transform:rotate(45deg);
+                }
+
+                &:after{
+                    transform:rotate(-45deg);
+                }
+            }
+        }
+    }
+}

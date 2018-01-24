@@ -10,6 +10,5 @@ namespace three_t_backend.Models
         }
 
         public DbSet<Game> GameItems { get; set; }
-
     }
 }

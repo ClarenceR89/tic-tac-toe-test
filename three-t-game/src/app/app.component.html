@@ -1,8 +1,8 @@
 <section class="sidebar-section container-fluid d-flex flex-row flex-wrap justify-content-center align-content-start h-100 px-0 pt-3">
-  <div class="menu-icon pb-3">
+  <div class="menu-icon pb-3" (click)="newGame()">
     <img [src]="Asset.NewIcon" alt="">
   </div>
-  <div class="menu-icon pb-3">
+  <div class="menu-icon pb-3" (click)="resetGame()">
     <img [src]="Asset.ResetIcon" alt="">
   </div>
   <label class="vertical-label">TIC-TAC-TOE</label>

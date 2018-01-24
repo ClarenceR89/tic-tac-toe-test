@@ -26,5 +26,12 @@ export class AppComponent implements OnInit {
     }
   }
 
-  //TODO register signal-r
+  newGame() {
+    this._router.navigate(['/register/new']);
+  }
+
+  resetGame() {
+    //todo: emit event to game controller
+    this._router.navigate(['/register/new']);
+  }
 }

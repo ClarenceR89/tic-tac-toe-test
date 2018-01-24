@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 const ROUTES =
   [
     {
-      path: ':id',
+      path: 'game/:id',
       component: BoardComponent
     },
     {
