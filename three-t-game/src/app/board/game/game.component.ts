@@ -35,7 +35,7 @@ export class GameComponent implements OnInit {
       console.log('AIMove', data);
     });
     this._hubConnection.on('Win', (data: any) => {
-      this.win = data.win;
+      this.win = data;
       if (this.win) {
         this.winText = 'YOU WIN!';
       }

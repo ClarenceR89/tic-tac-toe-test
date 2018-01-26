@@ -4,7 +4,7 @@ using three_t_backend.Models;
 using System.Linq;
 using System;
 using three_t_backend.SignalRHubs;
-using Microsoft.AspNetCore.SignalR.Client;
+using Microsoft.AspNetCore.SignalR;
 using System.Threading.Tasks;
 
 namespace three_t_backend.Controllers
@@ -14,26 +14,12 @@ namespace three_t_backend.Controllers
     {
 
         private readonly MoveContext _context;
-        private static HubConnection _hub;
-        private bool _hubConnected = false;
-        private List<Move> _moveMessages = new List<Move>();
-        private bool sendWin = false;
-        private bool playerWin = false;
+        private readonly IHubContext<MoveHub> _hubContext;
 
-        public MoveController(MoveContext context)
+        public MoveController(MoveContext context, IHubContext<MoveHub> hub)
         {
             _context = context;
-            _hub = new HubConnectionBuilder()
-                            .WithUrl("http://localhost:5000/move")
-                            .WithConsoleLogger()
-                            .Build();
-
-            _hubConnected = false;
-
-            _hub.Connected += hubConnected;
-            _hub.Closed += hubClosed;
-
-            _hub.StartAsync();
+            _hubContext = hub;
         }
 
         [HttpGet]
@@ -66,13 +52,7 @@ namespace three_t_backend.Controllers
 
 
             if (this.calculateWin(move.GameId, move.UserId)) {
-                if (_hubConnected) {
-                    _hub.InvokeAsync("Win", true);
-                } 
-                else {
-                    sendWin = true;
-                    playerWin = true;
-                }
+                _hubContext.Clients.All.InvokeAsync("Win", true);
             }
             else {
                 getAIMove(move.GameId);                
@@ -93,28 +73,6 @@ namespace three_t_backend.Controllers
             _context.MoveItems.Remove(move);
             _context.SaveChanges();
             return new NoContentResult();
-        }
-
-        private Task hubConnected()
-        {
-            this._hubConnected = true;
-            if (_moveMessages.Count > 0)
-            {
-                _moveMessages.ForEach(move =>
-                {
-                    _hub.InvokeAsync("Move", move);
-                });
-            }
-            if (sendWin) {
-                _hub.InvokeAsync("Win", playerWin);
-            }
-            return Task.CompletedTask;
-        }
-
-        private Task hubClosed(Exception e)
-        {
-            this._hubConnected = false;
-            return Task.CompletedTask;
         }
 
         private void getAIMove(long gameId)
@@ -155,22 +113,10 @@ namespace three_t_backend.Controllers
 
             _context.MoveItems.Add(aimove);
             _context.SaveChanges();
-            if (_hubConnected)
-            {
-                _hub.InvokeAsync("Move", aimove);
-            }
-            else
-            {
-                this._moveMessages.Add(aimove);
-            }
+            _hubContext.Clients.All.InvokeAsync("Move", aimove);
+
             if (this.calculateWin(aimove.GameId, aimove.UserId)) {
-                if (_hubConnected) {
-                    _hub.InvokeAsync("Win", false);
-                } 
-                else {
-                    sendWin = true;
-                    playerWin = false;
-                }
+                _hubContext.Clients.All.InvokeAsync("Win", false);
             }
         }
 
